@@ -18,16 +18,10 @@ This component can be used to show a clickable or non clickable logo with config
 
 | Prop Name     | Required | Default Value | Example value              |
 | ------------- | -------- | ------------- | -------------------------- |
-| darkable      | &#10005; | false         | true                       |
 | assetsURL     | &#10003; |               | https://assets.example.org |
 | logoName      | &#10003; |               | logo                       |
-| logoExtencion | &#10005; | png           |
+| logoExtencion | &#10005; | png           | jpg                        |
 | websiteURL    | &#10005; |               | https://www.example.com    |
 | websiteLocale | &#10005; |               | en-US                      |
+| darkable      | &#10005; | false         | true                       |
 | width         | &#10005; | 100%          | 50px                       |
-
-## Todo
-
-- Add Props for all components
-- Add rest of the components
-- Add storybook
