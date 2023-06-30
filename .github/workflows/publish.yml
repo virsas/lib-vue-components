@@ -1,0 +1,85 @@
+name: Publish component library
+
+on:
+  push:
+    branches:
+      - "main"
+    paths-ignore:
+      - "**.md"
+
+env:
+  MAJOR_VERSION: 0
+  MINOR_VERSION: 1
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: "https://registry.npmjs.org"
+      - name: Generate package.json file
+        run: |
+          cat > package.json << EOF
+          {
+            "name": "@virsas/quasar-components",
+            "version": "$MAJOR_VERSION.$MINOR_VERSION.$GITHUB_RUN_NUMBER",
+            "description": "Virsas Vue3 / Quasar2 components' library",
+            "author": "Stefan Moravcik <stefan@virsas.com>",
+            "license": "MIT",
+            "main": "src/index.js",
+            "scripts": {
+              "build": "rollup -c",
+              "lint": "eslint --ext .js,.vue src",
+              "lint-fix": "eslint --ext .js,.vue src --fix",
+              "test": "echo \"No test specified\" && exit 0"
+            },
+            "publishConfig": {
+              "access": "public"
+            },
+            "keywords": [
+              "Virsas",
+              "Components",
+              "Quasar component library",
+              "Vue 3",
+              "Vue",
+              "Quasar 2",
+              "Quasar"
+            ],
+            "repository": {
+              "type": "git",
+              "url": "git+https://github.com/virsas/lib-quasar-components.git"
+            },
+            "bugs": {
+              "url": "https://github.com/virsas/lib-quasar-components/issues"
+            },
+            "homepage": "https://github.com/virsas/lib-quasar-components#readme",
+            "engines": {
+              "node": ">= 18.0.0",
+              "npm": ">= 9.0.0"
+            },
+            "peerDependencies": {
+              "quasar": "^2.12.0",
+              "vue": "^3.2.47"
+            },
+            "devDependencies": {
+              "eslint": "^8.43.0",
+              "eslint-plugin-vue": "^9.15.0",
+              "rollup": "^3.26.0",
+              "rollup-plugin-peer-deps-external": "^2.2.4",
+              "rollup-plugin-vue": "^6.0.0"
+            }
+          }
+          EOF
+      - name: Install dependencies
+        run: npm install
+      - name: Test the code
+        run: npm test
+      - name: Publish package
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.TOKEN_NPM }}
