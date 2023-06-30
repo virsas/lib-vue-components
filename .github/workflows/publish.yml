@@ -26,9 +26,9 @@ jobs:
         run: |
           cat > package.json << EOF
           {
-            "name": "@virsas/quasar-components",
+            "name": "@virsas/vue-components",
             "version": "$MAJOR_VERSION.$MINOR_VERSION.$GITHUB_RUN_NUMBER",
-            "description": "Virsas Vue3 / Quasar2 components' library",
+            "description": "Virsas Vue3 and/or Quasar2 component library",
             "author": "Stefan Moravcik <stefan@virsas.com>",
             "license": "MIT",
             "main": "src/index.js",
@@ -44,6 +44,7 @@ jobs:
             "keywords": [
               "Virsas",
               "Components",
+              "Vue component library",
               "Quasar component library",
               "Vue 3",
               "Vue",
@@ -52,12 +53,12 @@ jobs:
             ],
             "repository": {
               "type": "git",
-              "url": "git+https://github.com/virsas/lib-quasar-components.git"
+              "url": "git+https://github.com/virsas/lib-vue-components.git"
             },
             "bugs": {
-              "url": "https://github.com/virsas/lib-quasar-components/issues"
+              "url": "https://github.com/virsas/lib-vue-components/issues"
             },
-            "homepage": "https://github.com/virsas/lib-quasar-components#readme",
+            "homepage": "https://github.com/virsas/lib-vue-components#readme",
             "engines": {
               "node": ">= 18.0.0",
               "npm": ">= 9.0.0"
