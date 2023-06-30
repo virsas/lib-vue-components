@@ -1,14 +1,9 @@
-import components from "./components";
+import VLogo from "./components/element/VLogo.vue";
 
-const plugin = {
+const virsas = {
   install(Vue) {
-    for (const prop in components) {
-      if (Object.hasOwn(components, prop)) {
-        const component = components[prop];
-        Vue.component(component.name, component);
-      }
-    }
+    Vue.component("VLogo", VLogo);
   },
 };
 
-export default plugin;
+export default virsas;
