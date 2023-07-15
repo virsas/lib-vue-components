@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import VFormInput from "../form/VFormInput"
+import VFormInput from "../form/VFormInput.vue"
 import VElementButton from "./VElementButton.vue"
 
 const props = defineProps({
