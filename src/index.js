@@ -12,6 +12,7 @@ import VFormDate from "./components/form/VFormDate.vue";
 // Import page elements
 import VPageHeader from "./components/page/VPageHeader.vue";
 import VPageLegal from "./components/page/VPageLegal.vue";
+import VPageLoading from "./components/page/VPageLoading.vue";
 import VPagePopup from "./components/page/VPagePopup.vue";
 
 const virsas = {
@@ -30,6 +31,7 @@ const virsas = {
     // Install page elements
     Vue.component("VPageHeader", VPageHeader);
     Vue.component("VPageLegal", VPageLegal);
+    Vue.component("VPageLoading", VPageLoading);
     Vue.component("VPagePopup", VPagePopup);
   },
 };
