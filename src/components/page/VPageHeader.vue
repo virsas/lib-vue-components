@@ -1,6 +1,6 @@
 <script setup>
-import VButton from "../element/VButton.vue";
-import VBreadcrumb from "../element/VBreadcrumb.vue";
+import VButton from "../element/VElementButton.vue";
+import VBreadcrumb from "../element/VElementBreadcrumb.vue";
 
 defineProps({
   onClick: {
