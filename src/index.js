@@ -11,6 +11,7 @@ import VFormSelect from "./components/form/VFormSelect.vue";
 import VFormDate from "./components/form/VFormDate.vue";
 // Import page elements
 import VPageHeader from "./components/page/VPageHeader.vue";
+import VPageLegal from "./components/page/VPageLegal.vue";
 import VPagePopup from "./components/page/VPagePopup.vue";
 
 const virsas = {
