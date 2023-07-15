@@ -1,8 +1,8 @@
 import VLogo from "./components/element/VLogo.vue";
-import VForm from "./components/element/VForm.vue";
-import VFormInput from "./components/element/VFormInput.vue";
-import VFormSelect from "./components/element/VFormSelect.vue";
-import VFormDate from "./components/element/VFormDate.vue";
+import VForm from "./components/form/VForm.vue";
+import VFormInput from "./components/form/VFormInput.vue";
+import VFormSelect from "./components/form/VFormSelect.vue";
+import VFormDate from "./components/form/VFormDate.vue";
 
 const virsas = {
   install(Vue) {
