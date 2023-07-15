@@ -16,7 +16,7 @@ const props = defineProps({
 
 const finalURL = ref(props.url)
 if (props.locale !== "") {
-  finalURL.value = props.url + "/" + locale
+  finalURL.value = props.url + "/" + props.locale
 }
 </script>
 
