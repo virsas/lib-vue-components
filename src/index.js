@@ -28,6 +28,7 @@ const virsas = {
     Vue.component("VFormDate", VFormDate);
     // Install page elements
     Vue.component("VPageHeader", VPageHeader);
+    Vue.component("VPageLegal", VPageLegal);
     Vue.component("VPagePopup", VPagePopup);
   },
 };
