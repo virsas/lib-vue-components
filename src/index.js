@@ -36,4 +36,5 @@ const virsas = {
   },
 };
 
+export * from "./utils";
 export default virsas;
