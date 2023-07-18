@@ -130,11 +130,31 @@ export const useStore = defineStore("item", {
 
 ## Components List
 
-- VLogo
+### Elements
+
+- VElementBreadcrumb
+- VElementButton
+- VElementIteem
+- VElementLogo
+- VElementTable
+
+### Form
+
+- VForm
+- VFormDate
+- VFormInput
+- VFormSelect
+
+### Page
+
+- VPageHeader
+- VPageLegal
+- VPageLoading
+- VPagePopup
 
 ## Individual components
 
-### VLogo
+### VElementLogo
 
 #### Description
 
