@@ -1,6 +1,6 @@
 # @virsas/vue-components
 
-Virsas Vue3 / Quasar2 components' library
+Virsas Vue3 / Quasar2 component and utility library
 
 ## Installation
 
@@ -60,6 +60,73 @@ const assetsURL = import.meta.env.VITE_ASSETS_URL;
   </q-layout>
 </template>
 ```
+
+### Usage of utilities
+
+```js
+import { defineStore } from "pinia";
+import axios from "axios";
+
+import { apiHeaders, notify } from "@virsas/vue-components";
+
+const api = import.meta.env.VITE_API_URL;
+
+export const useStore = defineStore("item", {
+  state: () => ({
+    items: [],
+  }),
+  actions: {
+    async list() {
+      try {
+        const res = await axios.get(`${api}/items`, apiHeaders());
+        this.items = res.data;
+        return true;
+      } catch (e) {
+        notify({ message: `error.${e.response.data.error}` });
+        return false;
+      }
+    },
+  },
+});
+```
+
+## Utilities List
+
+### Content
+
+- setMetadata
+
+### Date
+
+- stringToDate
+- stringToDatetime
+- stringToTime
+- stringToTimestamp
+- currentYear
+
+### Header
+
+- apiHeaders
+
+### Notification
+
+- notify
+
+### Pagination
+
+- pagedArray
+
+### Time
+
+- sleep
+
+### Validation
+
+- isValidEmail
+- isValidTelephone
+- isValidLength
+- isValidConfirmation
+- isGoodPassword
 
 ## Components List
 
