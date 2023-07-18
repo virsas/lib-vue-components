@@ -35,3 +35,5 @@ export const virsas = {
     Vue.component("VPagePopup", VPagePopup);
   },
 };
+
+export default virsas;
