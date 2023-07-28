@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 
 const props = defineProps({
   modelValue: {
@@ -43,6 +43,7 @@ const props = defineProps({
     default: false,
   }
 });
+const visiblePassword = ref(false);
 const emit = defineEmits(["update:modelValue"]);
 
 const value = computed({
@@ -64,19 +65,25 @@ const value = computed({
     lazy-rules="ondemand"
     :error-message="error"
     :rules="rules"
-    :type="type"
+    :type="type === 'password' && visiblePassword ? 'text' : type"
     :outlined="search ? true : false"
     :dense="search ? true : false"
     @wheel="$event.target.blur()"
   >
     <template
-      v-if="search"
+      v-if="type === 'password' || search"
       #append
     >
       <q-icon
         v-if="search"
         name="search"
         class="cursor-pointer"
+      />
+      <q-icon
+        v-if="type === 'password'"
+        :name="visiblePassword ? 'visibility_off' : 'visibility'"
+        class="cursor-pointer"
+        @click="visiblePassword = !visiblePassword"
       />
     </template>
   </q-input>
