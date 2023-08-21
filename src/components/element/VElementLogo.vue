@@ -37,7 +37,7 @@ const props = defineProps({
   class: {
     type: String,
     default: undefined,
-  }
+  },
 });
 
 const logoColor = ref("");

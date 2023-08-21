@@ -71,7 +71,11 @@ defineProps({
   loading: {
     type: Boolean,
     default: false,
-  }
+  },
+  class: {
+    type: String,
+    default: undefined,
+  },
 });
 </script>
 
@@ -92,6 +96,7 @@ defineProps({
     :href="href"
     :target="href ? '_blank' : undefined"
     :to="to ? { name: to } : null"
+    :class="class"
   >
     <q-menu v-if="menu">
       <q-list>

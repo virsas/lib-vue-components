@@ -36,6 +36,10 @@ defineProps({
     type: Boolean,
     default: true,
   },
+  class: {
+    type: String,
+    default: undefined,
+  },
 });
 </script>
 
@@ -46,6 +50,7 @@ defineProps({
     :to="to ? { name: to } : null"
     exact
     active-class="active-link"
+    :class="class"
   >
     <q-item-section
       v-if="icon !== ''"

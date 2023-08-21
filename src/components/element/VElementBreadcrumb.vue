@@ -4,11 +4,15 @@ defineProps({
     type: Array,
     required: true,
   },
+  class: {
+    type: String,
+    default: undefined,
+  },
 });
 </script>
 
 <template>
-  <q-breadcrumbs>
+  <q-breadcrumbs :class="class">
     <q-breadcrumbs-el
       v-for="(crumb, i) in crumbs"
       :key="i"
