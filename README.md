@@ -171,3 +171,4 @@ This component can be used to show a clickable or non clickable logo with config
 | websiteLocale | &#10005; |               | en-US                      |
 | darkable      | &#10005; | false         | true                       |
 | width         | &#10005; | 100%          | 50px                       |
+| class         | &#10005; |               | q-mt-xl                    |

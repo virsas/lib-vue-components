@@ -34,6 +34,10 @@ const props = defineProps({
     type: String,
     default: "100%",
   },
+  class: {
+    type: String,
+    default: undefined,
+  }
 });
 
 const logoColor = ref("");
@@ -71,6 +75,7 @@ if (props.darkable) {
       <q-img
         :src="imageURL"
         :width="width"
+        :class="class"
       />
     </a>
   </span>
@@ -78,6 +83,7 @@ if (props.darkable) {
     <q-img
       :src="imageURL"
       :width="width"
+      :class="class"
     />
   </span>
 </template>
