@@ -11,6 +11,10 @@ const props = defineProps({
   locale: {
     type: String,
     default: "",
+  },
+  class: {
+    type: String,
+    default: undefined,
   }
 })
 
@@ -21,22 +25,24 @@ if (props.locale !== "") {
 </script>
 
 <template>
-  <VElementButton
-    :label="$t('action.legal.terms')"
-    :href="finalURL + '/terms'"
-    type="a"
-    :flat="true"
-  />
-  <VElementButton
-    :label="$t('action.legal.privacy')"
-    :href="finalURL + '/privacy'"
-    type="a"
-    :flat="true"
-  />
-  <VElementButton
-    :label="$t('action.legal.cookies')"
-    :href="finalURL + '/cookies'"
-    type="a"
-    :flat="true"
-  />
+  <div :class="class">
+    <VElementButton
+      :label="$t('action.legal.terms')"
+      :href="finalURL + '/terms'"
+      type="a"
+      :flat="true"
+    />
+    <VElementButton
+      :label="$t('action.legal.privacy')"
+      :href="finalURL + '/privacy'"
+      type="a"
+      :flat="true"
+    />
+    <VElementButton
+      :label="$t('action.legal.cookies')"
+      :href="finalURL + '/cookies'"
+      type="a"
+      :flat="true"
+    />
+  </div>
 </template>
