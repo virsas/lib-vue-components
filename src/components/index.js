@@ -9,6 +9,7 @@ import VForm from "./form/VForm.vue";
 import VFormInput from "./form/VFormInput.vue";
 import VFormSelect from "./form/VFormSelect.vue";
 import VFormDate from "./form/VFormDate.vue";
+import VFormCheckbox from "./form/VFormCheckbox.vue";
 // Import page elements
 import VPageHeader from "./page/VPageHeader.vue";
 import VPageLegal from "./page/VPageLegal.vue";
@@ -28,6 +29,7 @@ export const virsas = {
     Vue.component("VFormInput", VFormInput);
     Vue.component("VFormSelect", VFormSelect);
     Vue.component("VFormDate", VFormDate);
+    Vue.component("VFormCheckbox", VFormCheckbox);
     // Install page elements
     Vue.component("VPageHeader", VPageHeader);
     Vue.component("VPageLegal", VPageLegal);

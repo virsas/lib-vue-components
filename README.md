@@ -144,6 +144,7 @@ export const useStore = defineStore("item", {
 - VFormDate
 - VFormInput
 - VFormSelect
+- VFormCheckbox
 
 ### Page
 
