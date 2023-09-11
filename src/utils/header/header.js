@@ -1,5 +1,4 @@
-export const apiHeaders = () => {
-  const token = localStorage.getItem("auth_token");
+export const apiHeaders = (token) => {
   const headers = {
     headers: {
       "Cache-Control": "no-cache",
