@@ -31,18 +31,21 @@ if (props.locale !== "") {
       :href="finalURL + '/terms'"
       type="a"
       :flat="true"
+      size="sm"
     />
     <VElementButton
       :label="$t('action.legal.privacy')"
       :href="finalURL + '/privacy'"
       type="a"
       :flat="true"
+      size="sm"
     />
     <VElementButton
       :label="$t('action.legal.cookies')"
       :href="finalURL + '/cookies'"
       type="a"
       :flat="true"
+      size="sm"
     />
   </div>
 </template>
