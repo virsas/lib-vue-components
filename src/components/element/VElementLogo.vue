@@ -63,15 +63,15 @@ if (props.darkable) {
   const dark = computed({ get: () => $q.dark.isActive });
   logoColor.value = props.lightName;
 
-  if (!dark.value) {
+  if (dark.value) {
     logoColor.value = props.darkName;
   }
 
   watch(dark, (val) => {
     if (val) {
-      logoColor.value = props.lightName;
-    } else {
       logoColor.value = props.darkName;
+    } else {
+      logoColor.value = props.lightName;
     }
   });
 }
