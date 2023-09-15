@@ -10,6 +10,14 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  lightName: {
+    type: String,
+    default: "Origin",
+  },
+  darkName: {
+    type: String,
+    default: "Invert",
+  },
   assetsUrl: {
     type: String,
     required: true,
@@ -53,17 +61,17 @@ if (props.websiteLocale != "") {
 
 if (props.darkable) {
   const dark = computed({ get: () => $q.dark.isActive });
-  logoColor.value = "Origin";
+  logoColor.value = props.lightName;
 
   if (!dark.value) {
-    logoColor.value = "Invert";
+    logoColor.value = props.darkName;
   }
 
   watch(dark, (val) => {
     if (val) {
-      logoColor.value = "Origin";
+      logoColor.value = props.lightName;
     } else {
-      logoColor.value = "Invert";
+      logoColor.value = props.darkName;
     }
   });
 }
