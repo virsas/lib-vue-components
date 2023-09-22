@@ -41,17 +41,30 @@ defineProps({
   },
   header_class: {
     type: String,
-    default: "q-ma-none text-h1",
+    default: "q-ma-none",
   },
+  mainheader: {
+    type: Boolean,
+    default: true,
+  }
 });
 </script>
 
 <template>
   <div :class="element_class">
     <q-toolbar :class="toolbar_class">
-      <h1 :class="header_class">
+      <h1
+        v-if="mainheader"
+        :class="header_class"
+      >
         {{ label }}
       </h1>
+      <h2
+        v-else
+        :class="header_class"
+      >
+        {{ label }}
+      </h2>
       <q-space />
       <VButton
         v-if="buttonText"
