@@ -19,6 +19,10 @@ defineProps({
     type: String,
     default: undefined,
   },
+  buttonColor: {
+    type: String,
+    default: "secondary",
+  },
   buttonIcon: {
     type: String,
     default: undefined,
@@ -27,13 +31,25 @@ defineProps({
     type: Array,
     default: undefined,
   },
+  element_class: {
+    type: String,
+    default: "q-mb-md",
+  },
+  toolbar_class: {
+    type: String,
+    default: "q-pa-none",
+  },
+  header_class: {
+    type: String,
+    default: "q-ma-none text-h1",
+  },
 });
 </script>
 
 <template>
-  <div class="q-mb-md">
-    <q-toolbar class="q-pa-none">
-      <h1 class="q-ma-none text-h4">
+  <div :class="element_class">
+    <q-toolbar :class="toolbar_class">
+      <h1 :class="header_class">
         {{ label }}
       </h1>
       <q-space />
@@ -41,7 +57,7 @@ defineProps({
         v-if="buttonText"
         :label="buttonText"
         :icon="buttonIcon"
-        color="secondary"
+        :color="buttonColor"
         @click="onClick"
       />
     </q-toolbar>
