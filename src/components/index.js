@@ -4,6 +4,7 @@ import VElementButton from "./element/VElementButton.vue";
 import VElementItem from "./element/VElementItem.vue";
 import VElementLogo from "./element/VElementLogo.vue";
 import VElementTable from "./element/VElementTable.vue";
+import VElementTabs from "./element/VElementTabs.vue";
 // Import form elements
 import VForm from "./form/VForm.vue";
 import VFormInput from "./form/VFormInput.vue";
@@ -24,6 +25,7 @@ export const virsas = {
     Vue.component("VElementItem", VElementItem);
     Vue.component("VElementLogo", VElementLogo);
     Vue.component("VElementTable", VElementTable);
+    Vue.component("VElementTabs", VElementTabs);
     // Install form elements
     Vue.component("VForm", VForm);
     Vue.component("VFormInput", VFormInput);
