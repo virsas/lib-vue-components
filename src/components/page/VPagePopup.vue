@@ -53,9 +53,9 @@ const open = computed({
   >
     <q-card :style="fullWidth ? 'width: 100vw;' : 'width: 100vw; max-width: 600px;'">
       <q-toolbar :class="'bg-' + color">
-        <h6 class="q-ma-none">
+        <h3 class="q-ma-none">
           {{ label }}
-        </h6>
+        </h3>
         <q-space />
         <q-btn
           flat
