@@ -36,6 +36,10 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  items: {
+    type: Array,
+    default: [],
+  }
 });
 </script>
 
