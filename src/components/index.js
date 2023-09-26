@@ -2,6 +2,7 @@
 import VElementBreadcrumb from "./element/VElementBreadcrumb.vue";
 import VElementButton from "./element/VElementButton.vue";
 import VElementItem from "./element/VElementItem.vue";
+import VElementList from "./element/VElementList.vue";
 import VElementLogo from "./element/VElementLogo.vue";
 import VElementTable from "./element/VElementTable.vue";
 import VElementTabs from "./element/VElementTabs.vue";
@@ -23,6 +24,7 @@ export const virsas = {
     Vue.component("VElementBreadcrumb", VElementBreadcrumb);
     Vue.component("VElementButton", VElementButton);
     Vue.component("VElementItem", VElementItem);
+    Vue.component("VElementList", VElementList);
     Vue.component("VElementLogo", VElementLogo);
     Vue.component("VElementTable", VElementTable);
     Vue.component("VElementTabs", VElementTabs);
