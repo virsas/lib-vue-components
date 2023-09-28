@@ -29,7 +29,11 @@ const props = defineProps({
   onClose: {
     type: Function,
     default: null,
-  }
+  },
+  persistent: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 const emit = defineEmits(["update:modelValue"]);
@@ -45,7 +49,7 @@ const open = computed({
 <template>
   <q-dialog
     v-model="open"
-    persistent
+    :persistent="persistent"
     :transition-show="position === 'standard' ? 'scale' : 'slide-left'"
     :transition-hide="position === 'standard' ? 'scale' : 'slide-right'"
     :position="position"
