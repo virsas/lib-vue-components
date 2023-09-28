@@ -46,6 +46,10 @@ const props = defineProps({
     type: String,
     default: undefined,
   },
+  imageWidth: {
+    type: String,
+    default: "25px",
+  },
 });
 
 const filter = ref();
@@ -121,7 +125,15 @@ const pagination = ref({
                   name="circle"
                 />
               </span>
-              <span v-if="col.value !== true && col.value !== false">
+              <span v-if="col.value.includes('https://') && col.value.includes('.png')">
+                <q-img
+                  :width="imageWidth"
+                  :src="col.value"
+                />
+              </span>
+              <span
+                v-if="col.value !== true && col.value !== false && !(col.value.includes('https://') && col.value.includes('.png'))"
+              >
                 {{ col.value }}
               </span>
             </q-td>
