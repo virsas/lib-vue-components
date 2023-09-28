@@ -46,7 +46,7 @@ const props = defineProps({
     type: String,
     default: undefined,
   },
-  imageWidth: {
+  avatarSize: {
     type: String,
     default: "25px",
   },
@@ -116,10 +116,9 @@ const pagination = ref({
               <span
                 v-if="(typeof col.value === 'string' || col.value instanceof String) && col.value.includes('https://') && col.value.includes('.png')"
               >
-                <q-img
-                  :width="imageWidth"
-                  :src="col.value"
-                />
+                <q-avatar :size="avatarSize">
+                  <q-img :src="col.value" />
+                </q-avatar>
               </span>
               <span v-else>
                 <span v-if="col.value === true">
