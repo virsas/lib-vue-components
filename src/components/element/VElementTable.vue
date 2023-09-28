@@ -125,7 +125,9 @@ const pagination = ref({
                   name="circle"
                 />
               </span>
-              <span v-if="col.value.includes('https://') && col.value.includes('.png')">
+              <span
+                v-if="col.value !== true && col.value !== false && col.value.includes('https://') && col.value.includes('.png')"
+              >
                 <q-img
                   :width="imageWidth"
                   :src="col.value"
