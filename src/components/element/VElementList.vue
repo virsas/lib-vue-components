@@ -14,7 +14,7 @@ const props = defineProps({
   },
   itemClass: {
     type: String,
-    default: "text-bold text-primary",
+    default: "",
   },
   label: {
     type: String,
