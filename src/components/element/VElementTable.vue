@@ -111,7 +111,7 @@ const pagination = ref({
               v-for="col in bodyprops.cols"
               :key="col.name"
               :props="bodyprops"
-              @click="showFunction(bodyprops.row.id)"
+              @click="showFunction(bodyprops.row)"
             >
               <span
                 v-if="(typeof col.value === 'string' || col.value instanceof String) && col.value.includes('https://') && col.value.includes('.png')"
