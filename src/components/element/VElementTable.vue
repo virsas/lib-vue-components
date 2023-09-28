@@ -113,30 +113,34 @@ const pagination = ref({
               :props="bodyprops"
               @click="showFunction(bodyprops.row.id)"
             >
-              <span v-if="col.value === true">
-                <q-icon
-                  class="text-green"
-                  name="circle"
-                />
+              <span v-if="typeof variable === 'boolean'">
+                <span v-if="col.value === true">
+                  <q-icon
+                    class="text-green"
+                    name="circle"
+                  />
+                </span>
+                <span v-else>
+                  <q-icon
+                    class="text-red"
+                    name="circle"
+                  />
+                </span>
               </span>
-              <span v-if="col.value === false">
-                <q-icon
-                  class="text-red"
-                  name="circle"
-                />
-              </span>
-              <span
-                v-if="col.value !== true && col.value !== false && col.value.includes('https://') && col.value.includes('.png')"
-              >
-                <q-img
-                  :width="imageWidth"
-                  :src="col.value"
-                />
-              </span>
-              <span
-                v-if="col.value !== true && col.value !== false && !(col.value.includes('https://') && col.value.includes('.png'))"
-              >
-                {{ col.value }}
+              <span v-else>
+                <span
+                  v-if="(typeof col.value === 'string' || col.value instanceof String) && col.value.includes('https://') && col.value.includes('.png')"
+                >
+                  <q-btn round>
+                    <q-img
+                      :width="imageWidth"
+                      :src="col.value"
+                    />
+                  </q-btn>
+                </span>
+                <span v-else>
+                  {{ col.value }}
+                </span>
               </span>
             </q-td>
             <q-td v-if="actions && actions.length > 0">
