@@ -41,7 +41,19 @@ const props = defineProps({
   loading: {
     type: Boolean,
     default: false,
-  }
+  },
+  mask: {
+    type: String,
+    default: undefined,
+  },
+  maskFill: {
+    type: String,
+    default: "0",
+  },
+  maskReverseFill: {
+    type: Boolean,
+    default: false,
+  },
 });
 const visiblePassword = ref(false);
 const emit = defineEmits(["update:modelValue"]);
@@ -69,6 +81,9 @@ const value = computed({
     :outlined="search ? true : false"
     :dense="search ? true : false"
     @wheel="$event.target.blur()"
+    :mask="mask"
+    :fill-mask="maskFill"
+    :reverse-fill-mask="maskReverseFill"
   >
     <template
       v-if="type === 'password' || search"
