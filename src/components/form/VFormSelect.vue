@@ -26,14 +26,18 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
-  useInput: {
-    type: Boolean,
-    default: true,
-  },
   loading: {
     type: Boolean,
     default: false,
-  }
+  },
+  emitValues: {
+    type: Boolean,
+    default: true,
+  },
+  mapOptions: {
+    type: Boolean,
+    default: true,
+  },
 });
 const emit = defineEmits(["update:modelValue"]);
 
@@ -57,6 +61,8 @@ const options = ref(props.options)
     use-input
     hide-selected
     fill-input
+    :emit-values="emitValues"
+    :map-options="mapOptions"
     :clearable="clearable"
     :error-message="error"
     :rules="rules"
