@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from "vue";
+import { computed } from "vue";
 
 const props = defineProps({
   modelValue: {
@@ -52,7 +52,9 @@ const value = computed({
   },
 });
 
-const options = ref(props.options)
+const options = computed({
+  get: () => props.options,
+});
 </script>
 
 <template>
