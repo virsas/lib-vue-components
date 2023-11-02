@@ -38,6 +38,10 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  noOption: {
+    type: String,
+    default: "No options",
+  },
 });
 const emit = defineEmits(["update:modelValue"]);
 
@@ -70,7 +74,7 @@ const options = ref(props.options)
     <template #no-option>
       <q-item>
         <q-item-section class="text-grey">
-          {{ t("form.global.no_option") }}
+          {{ noOption }}
         </q-item-section>
       </q-item>
     </template>
