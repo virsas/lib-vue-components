@@ -30,7 +30,7 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  emitValues: {
+  emitValue: {
     type: Boolean,
     default: true,
   },
@@ -61,7 +61,7 @@ const options = ref(props.options)
     use-input
     hide-selected
     fill-input
-    :emit-values="emitValues"
+    :emit-value="emitValue"
     :map-options="mapOptions"
     :clearable="clearable"
     :error-message="error"
