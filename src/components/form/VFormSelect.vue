@@ -38,6 +38,14 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
+  multiple: {
+    type: Boolean,
+    default: false,
+  },
+  useChips: {
+    type: Boolean,
+    default: false,
+  },
   noOption: {
     type: String,
     default: "No options",
@@ -72,6 +80,8 @@ const options = computed({
     :clearable="clearable"
     :error-message="error"
     :rules="rules"
+    :multiple="multiple"
+    :use-chips="useChips"
   >
     <template #no-option>
       <q-item>
