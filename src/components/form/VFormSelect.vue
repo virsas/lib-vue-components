@@ -46,6 +46,18 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  hideSelected: {
+    type: Boolean,
+    default: true,
+  },
+  useInput: {
+    type: Boolean,
+    default: true,
+  },
+  fillInput: {
+    type: Boolean,
+    default: true,
+  },
   noOption: {
     type: String,
     default: "No options",
@@ -72,9 +84,9 @@ const options = computed({
     :options="options"
     :readonly="loading"
     lazy-rules="ondemand"
-    use-input
-    hide-selected
-    fill-input
+    :use-input="useInput"
+    :hide-selected="hideSelected"
+    :fill-input="fillInput"
     :emit-value="emitValue"
     :map-options="mapOptions"
     :clearable="clearable"
